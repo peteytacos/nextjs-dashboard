@@ -86,3 +86,10 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+
+export type Quote = {
+  _id: string;
+  content: string;
+  author: string;
+}
