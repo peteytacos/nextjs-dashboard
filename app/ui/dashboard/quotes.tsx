@@ -34,11 +34,11 @@ const QuotesComponent = () => {
         //         </div>
         //     ))}
         // </div>
-        <div className="flex w-full flex-col gap-4 lg:col-span-12">
+        <div className="flex w-full flex-col gap-2 lg:col-span-12">
             <h2 className={`${nunito.className} mb-4 text-xl md:text-2xl`}>
                 Inspirational Quotes
             </h2>
-            <div className="flex grow flex-col gap-6 justify-between rounded-xl bg-gray-50 p-4">
+            <div className="flex grow flex-col gap-3 justify-between rounded-xl bg-gray-50 p-4">
                 {/* Use the `map` function to iterate over quotes and create a grid item for each */}
                 {quotes.map((quote) => (
                     <div key={quote._id} className="flex flex-col p-4 bg-white rounded shadow">
