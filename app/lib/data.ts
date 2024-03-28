@@ -239,3 +239,31 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+interface Quote {
+  _id: string;
+  content: string;
+  author: string;
+}
+
+// This function fetches a single random quote
+async function fetchRandomQuote(): Promise<Quote> {
+  const response = await fetch('https://api.quotable.io/random');
+  if (!response.ok) {
+    throw new Error('Failed to fetch the quote');
+  }
+  const data: Quote = await response.json();
+  return data;
+}
+
+// This function fetches 5 random quotes in parallel
+export async function fetchRandomQuotes(): Promise<Quote[]> {
+  try {
+    const quotePromises = Array(5).fill(null).map(() => fetchRandomQuote());
+    const quotes = await Promise.all(quotePromises);
+    return quotes;
+  } catch (error) {
+    console.error('Error fetching quotes:', error);
+    throw new Error('Failed to fetch quotes.');
+  }
+}

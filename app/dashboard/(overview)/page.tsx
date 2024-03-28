@@ -5,6 +5,7 @@ import { nunito } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import { LatestInvoicesSkeleton, RevenueChartSkeleton, CardsSkeleton } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
+import QuotesComponent from '@/app/ui/dashboard/quotes';
 
 
 export default async function Page() {
@@ -26,6 +27,9 @@ export default async function Page() {
                 <Suspense fallback={<LatestInvoicesSkeleton />}>
                     <LatestInvoices />
                 </Suspense>
+                <div>
+                    <QuotesComponent />
+                </div>
             </div>
         </main>
     );
