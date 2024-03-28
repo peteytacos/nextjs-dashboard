@@ -49,8 +49,8 @@ const QuotesComponent = () => {
 
                 ))}
             </div>
-
         </div>
+
 
 
     );
